@@ -203,6 +203,13 @@ strong, b { font-weight: 600; }
 }
 .pubs li::marker { color: var(--text-soft); font-variant-numeric: tabular-nums; }
 .pubs i { color: var(--text-soft); font-style: italic; }
+.pub-note {
+  max-width: 620px;
+  margin: 24px auto 0;
+  font-size: 13px;
+  color: var(--text-soft);
+  text-align: center;
+}
 
 /* ===== Talks — left text, centered block ===== */
 .talks {
