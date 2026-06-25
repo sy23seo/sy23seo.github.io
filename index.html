@@ -8,7 +8,7 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=15">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -36,7 +36,7 @@
         <a href="#publications">Publications</a>
         <a href="#talks">Conference</a>
       </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
     </div>
   </header>
 
@@ -72,7 +72,7 @@
         </li>
         <li>
           <span class="when">2020 &ndash; 2022</span>
-          <span class="what"><strong>M.S., Biomedical Engineering</strong><br>University of Ulsan &middot; Ulsan, Korea<span class="note">Research at Asan Medical Center, Seoul, Korea</span><span class="note">Advisor: Prof. Jungsu S. Oh</span></span>
+          <span class="what"><strong>M.S., Biomedical Engineering</strong><br>University of Ulsan &middot; Ulsan, Korea<span class="note">Research at Asan Medical Center, Seoul, Korea</span><span class="note">Thesis: <i>Unified Deep Learning-Based Mouse Brain MR Segmentation: Template-Based Individual Brain Positron Emission Tomography Volumes-of-Interest Generation Without Spatial Normalization in Mouse Alzheimer Model</i></span><span class="note">Advisor: Prof. Jungsu S. Oh</span></span>
         </li>
         <li>
           <span class="when">2013 &ndash; 2019</span>
@@ -235,8 +235,8 @@
       syncThemeIcon();
     }
     function syncThemeIcon() {
-      var i = document.querySelector('.theme-toggle i');
-      if (i) i.className = document.documentElement.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
+      var b = document.querySelector('.theme-toggle');
+      if (b) b.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
     }
     syncThemeIcon();
   </script>
