@@ -19,16 +19,16 @@
 
 /* ===== Dark theme ===== */
 :root.dark {
-  --text:      #f5f5f7;
-  --text-soft: #98989d;
-  --bg:        #000000;
-  --bg-alt:    #1c1c1e;
-  --accent:    #2997ff;
-  --accent-dk: #0071e3;
+  --text:      #e6e6e8;   /* soft white (VS Code-like) */
+  --text-soft: #9b9ba2;
+  --bg:        #1e1e20;   /* charcoal editor bg */
+  --bg-alt:    #252529;   /* panel/sidebar shade */
+  --accent:    #4ea1ff;
+  --accent-dk: #2997ff;
   --accent2:   #2dd4bf;
   --accent2-bg:rgba(45, 212, 191, 0.16);
-  --border:    #2c2c2e;
-  --nav-bg:    rgba(0, 0, 0, 0.6);
+  --border:    #34343a;
+  --nav-bg:    rgba(30, 30, 32, 0.72);
 }
 
 /* ===== Base ===== */
@@ -43,7 +43,7 @@ html { scroll-behavior: smooth; }
   left: 0;
   right: 0;
   height: 75vh;
-  background: radial-gradient(72% 55% at 50% 0%, rgba(41, 151, 255, 0.13), rgba(45, 212, 191, 0.04) 48%, transparent 72%);
+  background: radial-gradient(72% 55% at 50% 0%, rgba(78, 161, 255, 0.10), rgba(45, 212, 191, 0.03) 48%, transparent 72%);
   pointer-events: none;
   z-index: 0;
 }
