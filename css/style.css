@@ -7,11 +7,13 @@
   --text-soft: #86868b;   /* secondary text — Apple gray */
   --bg:        #ffffff;   /* page background */
   --bg-alt:    #f5f5f7;   /* alternating section — Apple light gray */
-  --accent:    #0071e3;   /* Apple blue */
+  --accent:    #0071e3;   /* Apple blue — links, timeline, structure */
   --accent-dk: #0058b8;   /* hover */
+  --accent2:   #0d9488;   /* teal — status tags */
+  --accent2-bg:#e6f4f2;   /* teal tint */
   --border:    #e3e3e6;   /* hairlines */
 
-  --content:   680px;     /* text column width (narrow → reads centered) */
+  --content:   760px;     /* text column width */
 }
 
 /* ===== Base ===== */
@@ -150,31 +152,52 @@ strong, b { font-weight: 600; }
   font-size: 19px;
   line-height: 1.7;
   color: var(--text);
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
-/* ===== Timeline (education / experience) — left text, centered block ===== */
+/* ===== Timeline (education / experience) — vertical rail + dots ===== */
 .timeline {
   list-style: none;
-  padding: 0;
   margin: 0 auto;
-  max-width: 440px;          /* narrow → block sits in the middle */
+  max-width: 520px;
+  padding: 0 0 0 30px;
+  position: relative;
+  text-align: left;
+}
+.timeline::before {            /* the vertical rail */
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
 }
 .timeline li {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;   /* text hugs left */
-  text-align: left;
-  gap: 5px;
-  padding: 22px 0;
-  border-top: 1px solid var(--border);
+  position: relative;
+  padding: 0 0 30px;
 }
-.timeline li:last-child { border-bottom: 1px solid var(--border); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {         /* the dot on the rail */
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.section.alt .timeline li::before { box-shadow: 0 0 0 4px var(--bg-alt); }
 .timeline .when {
-  color: var(--text-soft);
-  font-size: 15px;
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
   font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
 }
 .timeline .what { line-height: 1.5; }
 .timeline .note {
@@ -188,7 +211,7 @@ strong, b { font-weight: 600; }
 .pubs {
   list-style: decimal;
   margin: 0 auto;
-  max-width: 620px;
+  max-width: 720px;
   padding-left: 1.6em;
   text-align: left;
 }
@@ -231,7 +254,7 @@ a.pub-title:hover::after { opacity: 1; color: var(--accent); }
 }
 .pub-venue i { font-style: italic; }
 .pub-note {
-  max-width: 620px;
+  max-width: 720px;
   margin: -8px auto 22px;
   font-size: 13px;
   color: var(--text-soft);
@@ -242,7 +265,7 @@ a.pub-title:hover::after { opacity: 1; color: var(--accent); }
 .talks {
   list-style: none;
   margin: 0 auto;
-  max-width: 620px;
+  max-width: 720px;
   padding: 0;
   text-align: left;
 }
@@ -256,9 +279,9 @@ a.pub-title:hover::after { opacity: 1; color: var(--accent); }
   margin-left: 6px;
   padding: 2px 11px;
   font-size: 12px;
-  font-weight: 500;
-  color: var(--accent);
-  background: rgba(0, 113, 227, 0.10);
+  font-weight: 600;
+  color: var(--accent2);
+  background: var(--accent2-bg);
   border-radius: 980px;
   white-space: nowrap;
 }
