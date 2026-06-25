@@ -35,6 +35,21 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Subtle ambient glow in dark mode (adds depth to flat black) */
+:root.dark body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75vh;
+  background: radial-gradient(72% 55% at 50% 0%, rgba(41, 151, 255, 0.13), rgba(45, 212, 191, 0.04) 48%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+:root.dark main,
+:root.dark .footer { position: relative; z-index: 1; }
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -153,6 +168,8 @@ strong, b { font-weight: 600; }
   transition: all .2s ease;
 }
 .hero-links a:hover { background: var(--bg-alt); border-color: var(--text-soft); text-decoration: none; transform: translateY(-1px); }
+.hero-links .fa-envelope { color: var(--accent); }
+.hero-links .fa-flask { color: var(--accent2); }
 
 /* ===== Sections ===== */
 .section { padding: 100px 24px; }
