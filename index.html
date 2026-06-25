@@ -8,7 +8,7 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=18">
+  <link rel="stylesheet" href="css/style.css?v=19">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -28,6 +28,7 @@
   <!-- Top navigation -->
   <header class="nav">
     <div class="nav-inner">
+      <span class="nav-updated">Updated <span class="js-updated"></span></span>
       <a class="nav-name" href="#top">Seung Yeon Seo</a>
       <nav class="nav-links">
         <a href="#about">About</a>
@@ -225,7 +226,7 @@
     <p><a href="mailto:sy23.seo@yonsei.ac.kr">sy23.seo@yonsei.ac.kr</a> &middot; <a href="mailto:sy23.seo@gmail.com">sy23.seo@gmail.com</a></p>
     <p class="muted"><a href="https://kimchi.yonsei.ac.kr" target="_blank" rel="noopener">Medical Imaging Artificial Intelligence Laboratory</a>, Yonsei University</p>
     <p class="muted">Engineering Hall 3, Room C218 &middot; Seoul, Korea</p>
-    <p class="muted small">Last updated <span id="last-updated"></span> &middot; &copy; Seung Yeon Seo</p>
+    <p class="muted small">Last updated <span class="js-updated"></span> &middot; &copy; Seung Yeon Seo</p>
   </footer>
 
   <script>
@@ -241,8 +242,8 @@
     }
     syncThemeIcon();
 
-    var lu = document.getElementById('last-updated');
-    if (lu) lu.textContent = new Date(document.lastModified).toDateString();
+    var d = new Date(document.lastModified).toDateString();
+    document.querySelectorAll('.js-updated').forEach(function (el) { el.textContent = d; });
   </script>
 
 </body>
