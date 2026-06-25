@@ -120,12 +120,6 @@ strong, b { font-weight: 600; }
   transition: all .2s ease;
 }
 .hero-links a:hover { background: var(--bg-alt); border-color: var(--text-soft); text-decoration: none; transform: translateY(-1px); }
-.hero-links a.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.hero-links a.primary:hover { background: var(--accent-dk); border-color: var(--accent-dk); }
 
 /* ===== Sections ===== */
 .section { padding: 100px 24px; }
