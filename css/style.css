@@ -205,7 +205,7 @@ strong, b { font-weight: 600; }
 .pubs i { color: var(--text-soft); font-style: italic; }
 .pub-note {
   max-width: 620px;
-  margin: 0 auto 32px;
+  margin: -8px auto 22px;
   font-size: 13px;
   color: var(--text-soft);
   text-align: center;
