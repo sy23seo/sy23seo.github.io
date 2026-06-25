@@ -8,7 +8,7 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=19">
+  <link rel="stylesheet" href="css/style.css?v=20">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -28,7 +28,6 @@
   <!-- Top navigation -->
   <header class="nav">
     <div class="nav-inner">
-      <span class="nav-updated">Updated <span class="js-updated"></span></span>
       <a class="nav-name" href="#top">Seung Yeon Seo</a>
       <nav class="nav-links">
         <a href="#about">About</a>
@@ -55,6 +54,7 @@
         <a href="mailto:sy23.seo@yonsei.ac.kr" aria-label="Email"><i class="fas fa-envelope"></i><span>Email</span></a>
         <a href="https://kimchi.yonsei.ac.kr" target="_blank" rel="noopener" aria-label="Lab"><i class="fas fa-flask"></i><span>Lab</span></a>
       </div>
+      <p class="hero-updated">Updated <span class="js-updated"></span></p>
     </section>
 
     <!-- About -->
@@ -242,7 +242,7 @@
     }
     syncThemeIcon();
 
-    var d = new Date(document.lastModified).toDateString();
+    var d = new Date(document.lastModified).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     document.querySelectorAll('.js-updated').forEach(function (el) { el.textContent = d; });
   </script>
 
