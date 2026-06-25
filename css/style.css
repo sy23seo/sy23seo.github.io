@@ -96,7 +96,10 @@ strong, b { font-weight: 600; }
   margin: 0 0 16px;
 }
 .hero-role { font-size: 23px; font-weight: 500; margin: 0 0 2px; letter-spacing: -0.01em; }
-.hero-affil { font-size: 19px; color: var(--text-soft); margin: 0 0 22px; }
+.hero-affil { font-size: 19px; color: var(--text-soft); margin: 0 0 6px; }
+.hero-lab { font-size: 15px; color: var(--text-soft); margin: 0 0 22px; }
+.hero-lab a { color: var(--text); border-bottom: 1px solid var(--border); }
+.hero-lab a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .hero-tagline {
   font-size: 19px;
   color: var(--text);
@@ -196,29 +199,44 @@ strong, b { font-weight: 600; }
   padding-left: 1.6em;
   text-align: left;
 }
-.pubs li {
-  margin-bottom: 18px;
-  line-height: 1.6;
-  font-size: 16px;
-}
+.pubs li { margin-bottom: 26px; }
+.pubs li:last-child { margin-bottom: 0; }
 .pubs li::marker { color: var(--text-soft); font-variant-numeric: tabular-nums; }
-.pubs i { color: var(--text-soft); font-style: italic; }
-.pub-link {
+
+/* Title-first entry — shared by publications and talks */
+.pub-title {
   display: block;
-  color: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
   text-decoration: none;
-  transition: color .15s ease;
 }
-.pub-link::after {
+a.pub-title { transition: color .15s ease; }
+a.pub-title::after {
   content: "\2197";              /* ↗ */
   margin-left: 4px;
   color: var(--text-soft);
   opacity: 0;
   transition: opacity .15s ease;
 }
-.pub-link:hover { color: var(--accent); text-decoration: none; }
-.pub-link:hover i { color: var(--accent); }
-.pub-link:hover::after { opacity: 1; color: var(--accent); }
+a.pub-title:hover { color: var(--accent); text-decoration: none; }
+a.pub-title:hover::after { opacity: 1; color: var(--accent); }
+.pub-authors {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.pub-authors b { font-weight: 600; }
+.pub-venue {
+  display: block;
+  margin-top: 2px;
+  font-size: 15px;
+  color: var(--text-soft);
+}
+.pub-venue i { font-style: italic; }
 .pub-note {
   max-width: 620px;
   margin: -8px auto 22px;
@@ -238,20 +256,18 @@ strong, b { font-weight: 600; }
 .talks li {
   padding: 22px 0;
   border-top: 1px solid var(--border);
-  font-size: 16px;
-  line-height: 1.6;
 }
 .talks li:last-child { border-bottom: 1px solid var(--border); }
-.talks .venue { display: block; color: var(--text-soft); margin-top: 4px; }
-.talks .tag {
+.tag {
   display: inline-block;
-  margin-top: 10px;
-  padding: 3px 13px;
+  margin-left: 6px;
+  padding: 2px 11px;
   font-size: 12px;
   font-weight: 500;
   color: var(--accent);
   background: rgba(0, 113, 227, 0.10);
   border-radius: 980px;
+  white-space: nowrap;
 }
 
 /* ===== Footer ===== */
