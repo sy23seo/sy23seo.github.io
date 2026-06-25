@@ -225,7 +225,7 @@
     <p><a href="mailto:sy23.seo@yonsei.ac.kr">sy23.seo@yonsei.ac.kr</a> &middot; <a href="mailto:sy23.seo@gmail.com">sy23.seo@gmail.com</a></p>
     <p class="muted"><a href="https://kimchi.yonsei.ac.kr" target="_blank" rel="noopener">Medical Imaging Artificial Intelligence Laboratory</a>, Yonsei University</p>
     <p class="muted">Engineering Hall 3, Room C218 &middot; Seoul, Korea</p>
-    <p class="muted small">&copy; Seung Yeon Seo</p>
+    <p class="muted small">Last updated <span id="last-updated"></span> &middot; &copy; Seung Yeon Seo</p>
   </footer>
 
   <script>
@@ -240,6 +240,9 @@
       if (b) b.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
     }
     syncThemeIcon();
+
+    var lu = document.getElementById('last-updated');
+    if (lu) lu.textContent = new Date(document.lastModified).toDateString();
   </script>
 
 </body>
