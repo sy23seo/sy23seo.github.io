@@ -8,9 +8,20 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="stylesheet" href="css/style.css?v=14">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    /* Apply saved/system theme before paint to avoid flash */
+    (function () {
+      try {
+        var s = localStorage.getItem('theme');
+        if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -25,6 +36,7 @@
         <a href="#publications">Publications</a>
         <a href="#talks">Conference</a>
       </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
     </div>
   </header>
 
@@ -214,6 +226,20 @@
     <p class="muted">Yonsei University, Seoul, Korea</p>
     <p class="muted small">&copy; Seung Yeon Seo</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      var root = document.documentElement;
+      root.classList.toggle('dark');
+      try { localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
+      syncThemeIcon();
+    }
+    function syncThemeIcon() {
+      var i = document.querySelector('.theme-toggle i');
+      if (i) i.className = document.documentElement.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    syncThemeIcon();
+  </script>
 
 </body>
 </html>
