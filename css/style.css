@@ -96,7 +96,7 @@ strong, b { font-weight: 600; }
   margin: 0 0 16px;
 }
 .hero-role { font-size: 23px; font-weight: 500; margin: 0 0 2px; letter-spacing: -0.01em; }
-.hero-affil { font-size: 19px; color: var(--text-soft); margin: 0 0 6px; }
+.hero-affil { font-size: 19px; color: var(--text); margin: 0 0 6px; }
 .hero-lab { font-size: 15px; color: var(--text-soft); margin: 0 0 22px; }
 .hero-tagline {
   font-size: 18px;
