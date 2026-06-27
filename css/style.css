@@ -209,6 +209,7 @@ strong, b { font-weight: 600; }
   color: var(--text);
   max-width: 720px;
   margin: 0 auto;
+  text-wrap: balance;   /* even out line lengths so the block reads centered */
 }
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
