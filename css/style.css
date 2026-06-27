@@ -176,6 +176,7 @@ strong, b { font-weight: 600; }
 .hero-links a:hover { background: var(--bg-alt); border-color: var(--text-soft); text-decoration: none; transform: translateY(-1px); }
 .hero-links .fa-envelope { color: var(--accent); }
 .hero-links .fa-flask { color: var(--accent2); }
+.hero-links .fa-google-scholar { color: var(--accent); }
 
 /* ===== Sections ===== */
 .section { padding: 100px 24px; }
