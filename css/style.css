@@ -114,6 +114,12 @@ strong, b { font-weight: 600; }
   color: var(--text-soft);
   font-variant-numeric: tabular-nums;
 }
+.hero-rule {
+  width: 44px;
+  height: 1px;
+  background: var(--border);
+  margin: 30px auto 0;
+}
 .nav-name {
   font-weight: 600;
   font-size: 15px;
