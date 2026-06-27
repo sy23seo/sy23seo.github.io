@@ -205,13 +205,13 @@ strong, b { font-weight: 600; }
 
 /* About paragraph — left-aligned text, centered block */
 .about p {
-  text-align: left;
+  text-align: center;   /* short intro reads best centered — no left-heavy feel */
   font-size: 19px;
   line-height: 1.7;
   color: var(--text);
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  text-wrap: balance;   /* even out line lengths so the block reads centered */
+  text-wrap: balance;   /* even line lengths, Apple-style */
 }
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
