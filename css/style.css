@@ -12,6 +12,7 @@
   --accent2:   #0d9488;   /* teal — status tags */
   --accent2-bg:#e2efec;   /* teal tint */
   --border:    #e3e1dc;   /* hairlines */
+  --note:      #6b6b70;   /* secondary detail text — readable, not faint */
   --nav-bg:    rgba(246, 245, 242, 0.78);
 
   --content:   760px;     /* text column width */
@@ -28,6 +29,7 @@
   --accent2:   #2dd4bf;
   --accent2-bg:rgba(45, 212, 191, 0.16);
   --border:    #34343a;
+  --note:      #adadb4;
   --nav-bg:    rgba(30, 30, 32, 0.72);
 }
 
@@ -255,12 +257,13 @@ strong, b { font-weight: 600; }
   font-variant-numeric: tabular-nums;
   margin-bottom: 4px;
 }
-.timeline .what { line-height: 1.5; }
+.timeline .what { line-height: 1.45; font-size: 16px; }
+.timeline .what strong { font-size: 19px; }   /* degree — primary, larger + bold */
 .timeline .note {
   display: block;
   margin-top: 3px;
   font-size: 14px;
-  color: var(--text-soft);
+  color: var(--note);
 }
 .timeline .note a {
   color: var(--text);            /* darker than the muted label → reads as interactive */
