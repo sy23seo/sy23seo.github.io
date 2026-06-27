@@ -261,6 +261,20 @@ strong, b { font-weight: 600; }
   font-size: 14px;
   color: var(--text-soft);
 }
+.timeline .note a {
+  color: inherit;                /* same muted gray as the note — no clash with blue year */
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.timeline .note a::after {
+  content: "\2197";              /* ↗ on hover, like publication links */
+  margin-left: 3px;
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+.timeline .note a:hover { color: var(--accent); text-decoration: none; }
+.timeline .note a:hover::after { opacity: 1; }
 
 /* ===== Publications — left text, centered block ===== */
 .pubs {
