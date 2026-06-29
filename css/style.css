@@ -115,7 +115,7 @@ strong, b { font-weight: 600; }
   font-variant-numeric: tabular-nums;
 }
 .hero-rule {
-  width: 72px;
+  width: 120px;
   height: 1px;
   background: var(--border);
   margin: 30px auto 0;
