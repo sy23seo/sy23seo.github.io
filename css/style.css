@@ -115,7 +115,7 @@ strong, b { font-weight: 600; }
   font-variant-numeric: tabular-nums;
 }
 .hero-rule {
-  width: 44px;
+  width: 72px;
   height: 1px;
   background: var(--border);
   margin: 30px auto 0;
@@ -143,8 +143,8 @@ strong, b { font-weight: 600; }
   text-align: center;
 }
 .hero-photo {
-  width: 148px;
-  height: 148px;
+  width: 176px;
+  height: 176px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 32px;
@@ -224,7 +224,7 @@ strong, b { font-weight: 600; }
 .timeline {
   list-style: none;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 680px;
   padding: 0 0 0 30px;
   position: relative;
   text-align: left;
@@ -287,12 +287,28 @@ strong, b { font-weight: 600; }
 }
 .timeline .note a:hover { color: var(--accent); border-color: var(--accent); }
 .timeline .note a:hover::after { opacity: 1; }
+/* Experience institution links (direct child of .what) */
+.timeline .what > a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color .15s ease, border-color .15s ease;
+}
+.timeline .what > a::after {
+  content: "\2197";
+  margin-left: 3px;
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+.timeline .what > a:hover { color: var(--accent); border-color: var(--accent); }
+.timeline .what > a:hover::after { opacity: 1; }
 
 /* ===== Publications — left text, centered block ===== */
 .pubs {
   list-style: decimal;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 680px;
   padding-left: 1.6em;
   text-align: left;
 }
@@ -335,7 +351,7 @@ a.pub-title:hover::after { opacity: 1; color: var(--accent); }
 }
 .pub-venue i { font-style: italic; }
 .pub-note {
-  max-width: 720px;
+  max-width: 680px;
   margin: -8px auto 22px;
   font-size: 13px;
   color: var(--text-soft);
@@ -346,7 +362,7 @@ a.pub-title:hover::after { opacity: 1; color: var(--accent); }
 .talks {
   list-style: none;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 680px;
   padding: 0;
   text-align: left;
 }
