@@ -8,7 +8,7 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=31">
+  <link rel="stylesheet" href="css/style.css?v=32">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -59,10 +59,12 @@
       <div class="hero-rule"></div>
     </section>
 
+    <a class="scroll-hint" href="#about" aria-label="Scroll to content"><i class="fas fa-chevron-down"></i></a>
+
     <!-- About -->
     <section id="about" class="section about">
       <h2>About</h2>
-      <p>My goal is to make AI a dependable tool for reading medical images. During my master's I worked on <b>PET/CT</b> and <b>segmentation</b>; in my Ph.D. I've moved to <b>MRI</b> and <b>image generation</b>. Lately I'm interested in making image generation more efficient and controllable &mdash; focusing on what matters in an image, and sparing effort on what doesn't. Throughout, I care about results that hold up in the clinic, <b>not just on benchmarks</b>.</p>
+      <p>My goal is to make AI a dependable tool for reading medical images. During my master's I worked on <b>PET/CT</b> and <b>segmentation</b>; in my Ph.D. I've moved to <b>MRI</b> and <b>image generation</b>. Lately I'm interested in making image generation more <b>efficient and controllable</b> &mdash; focusing on what matters in an image, and sparing effort on what doesn't. Throughout, I care about results that hold up in the clinic, <b>not just on benchmarks</b>.</p>
     </section>
 
     <!-- Education -->
@@ -246,6 +248,11 @@
 
     var d = new Date(document.lastModified).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     document.querySelectorAll('.js-updated').forEach(function (el) { el.textContent = d; });
+
+    var sh = document.querySelector('.scroll-hint');
+    window.addEventListener('scroll', function () {
+      if (sh) sh.classList.toggle('hide', window.scrollY > 120);
+    }, { passive: true });
   </script>
 
 </body>

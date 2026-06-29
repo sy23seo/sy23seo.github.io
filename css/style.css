@@ -120,6 +120,25 @@ strong, b { font-weight: 600; }
   background: var(--border);
   margin: 30px auto 0;
 }
+/* Floating "scroll for more" hint */
+.scroll-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: var(--text-soft);
+  font-size: 18px;
+  animation: bob 1.8s ease-in-out infinite;
+  transition: opacity .4s ease;
+}
+.scroll-hint:hover { color: var(--text); text-decoration: none; }
+.scroll-hint.hide { opacity: 0; pointer-events: none; }
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(7px); }
+}
+@media (prefers-reduced-motion: reduce) { .scroll-hint { animation: none; } }
 .nav-name {
   font-weight: 600;
   font-size: 15px;
