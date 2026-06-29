@@ -215,10 +215,11 @@ strong, b { font-weight: 600; }
   font-size: 19px;
   line-height: 1.7;
   color: var(--text);
-  max-width: 680px;
+  max-width: 760px;     /* slightly wider than other sections */
   margin: 0 auto;
   text-wrap: balance;   /* even line lengths, Apple-style */
 }
+.about p b { font-weight: 600; }
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
 .timeline {
