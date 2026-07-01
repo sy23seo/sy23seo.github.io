@@ -184,15 +184,7 @@ strong, b { font-weight: 600; }
   text-decoration: none;
   transition: color .15s ease;
 }
-.hero-lab a::after {
-  content: "\2197";
-  margin-left: 2px;
-  font-size: 0.85em;
-  opacity: 0;
-  transition: opacity .15s ease;
-}
 .hero-lab a:hover { color: var(--accent); text-decoration: none; }
-.hero-lab a:hover::after { opacity: 1; color: var(--accent); }
 .hero-tagline {
   font-size: 18px;
   color: var(--text);
