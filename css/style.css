@@ -238,16 +238,15 @@ strong, b { font-weight: 600; }
 
 /* About paragraph — left-aligned text, centered block */
 .about p {
-  text-align: center;   /* short intro reads best centered — no left-heavy feel */
+  text-align: left;     /* long paragraph reads better left-aligned */
   font-size: 19px;
-  line-height: 1.7;
+  line-height: 1.78;
   color: var(--text);
-  max-width: 760px;     /* slightly wider than other sections */
+  max-width: 720px;
   margin: 0 auto;
-  text-wrap: balance;   /* even line lengths, Apple-style */
+  text-wrap: pretty;
 }
-.about p b { font-weight: 600; }
-:root.dark .about p b { color: #ffffff; }   /* brighter so emphasis shows on dark */
+.about p b { font-weight: 600; color: var(--accent2); }   /* teal emphasis — visible on light & dark */
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
 .timeline {
