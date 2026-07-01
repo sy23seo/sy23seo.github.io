@@ -37,6 +37,12 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Circular "swallow" reveal when toggling theme (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { z-index: 1; }
+::view-transition-old(root) { z-index: 0; }
+
 /* Subtle ambient glow in dark mode (adds depth to flat black) */
 :root.dark body::before {
   content: "";
