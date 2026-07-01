@@ -114,8 +114,8 @@ strong, b { font-weight: 600; }
   transition: transform .28s cubic-bezier(.34, 1.56, .64, 1);   /* springy */
 }
 /* hover: grow + lean toward where the moon "faces" */
-.theme-toggle:hover           { transform: translateY(-50%) scale(1.4) rotate(14deg); }   /* 🌝 leans right */
-:root.dark .theme-toggle:hover { transform: translateY(-50%) scale(1.4) rotate(-14deg); }  /* 🌚 leans left */
+.theme-toggle:hover           { transform: translateY(-50%) scale(1.75) rotate(14deg); }   /* 🌝 leans right */
+:root.dark .theme-toggle:hover { transform: translateY(-50%) scale(1.75) rotate(-14deg); }  /* 🌚 leans left */
 .hero-updated {
   margin: 22px 0 0;
   font-size: 12px;
