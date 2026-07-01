@@ -111,24 +111,11 @@ strong, b { font-weight: 600; }
   line-height: 1;
   cursor: pointer;
   padding: 6px;
-  transition: transform .2s ease;
+  transition: transform .28s cubic-bezier(.34, 1.56, .64, 1);   /* springy */
 }
-.theme-toggle:hover { transform: translateY(-50%) scale(1.15); }
-/* 🌝 (light) looks right → glides right; 🌚 (dark) looks left → glides left */
-.theme-toggle.pop-right { animation: toggle-pop-right .6s cubic-bezier(.34,1.56,.64,1); }
-.theme-toggle.pop-left  { animation: toggle-pop-left  .6s cubic-bezier(.34,1.56,.64,1); }
-@keyframes toggle-pop-right {
-  0%   { transform: translateY(-50%) translateX(0)    scale(1)   rotate(0deg); }
-  35%  { transform: translateY(-50%) translateX(16px) scale(1.8) rotate(12deg); }
-  60%  { transform: translateY(-50%) translateX(16px) scale(1.7) rotate(8deg); }
-  100% { transform: translateY(-50%) translateX(0)    scale(1)   rotate(0deg); }
-}
-@keyframes toggle-pop-left {
-  0%   { transform: translateY(-50%) translateX(0)     scale(1)   rotate(0deg); }
-  35%  { transform: translateY(-50%) translateX(-16px) scale(1.8) rotate(-12deg); }
-  60%  { transform: translateY(-50%) translateX(-16px) scale(1.7) rotate(-8deg); }
-  100% { transform: translateY(-50%) translateX(0)     scale(1)   rotate(0deg); }
-}
+/* hover: grow + lean toward where the moon "faces" */
+.theme-toggle:hover           { transform: translateY(-50%) scale(1.4) rotate(14deg); }   /* 🌝 leans right */
+:root.dark .theme-toggle:hover { transform: translateY(-50%) scale(1.4) rotate(-14deg); }  /* 🌚 leans left */
 .hero-updated {
   margin: 22px 0 0;
   font-size: 12px;
