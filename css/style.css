@@ -299,6 +299,17 @@ strong, b { font-weight: 600; }
   margin-bottom: 4px;
 }
 .timeline .what { line-height: 1.45; font-size: 16px; }
+.edu-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  padding: 3px;
+  margin-right: 9px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
 .timeline .what strong { font-size: 19px; }   /* degree — primary, larger + bold */
 .timeline .note {
   display: block;
