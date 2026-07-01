@@ -169,8 +169,8 @@ strong, b { font-weight: 600; }
   text-align: center;
 }
 .hero-photo {
-  width: 176px;
-  height: 176px;
+  width: 208px;
+  height: 208px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 32px;
