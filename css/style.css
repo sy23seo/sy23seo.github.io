@@ -128,7 +128,7 @@ strong, b { font-weight: 600; }
   transform: translateX(-50%);
   z-index: 5;
   color: var(--text-soft);
-  font-size: 18px;
+  font-size: 26px;
   animation: bob 1.8s ease-in-out infinite;
   transition: opacity .4s ease;
 }
