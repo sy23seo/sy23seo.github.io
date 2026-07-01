@@ -252,6 +252,7 @@ strong, b { font-weight: 600; }
   margin: 0 auto;
   text-wrap: pretty;
 }
+.about p + p { margin-top: 1.15em; }
 .about p b { font-weight: 600; color: var(--accent2); }   /* teal emphasis — visible on light & dark */
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
