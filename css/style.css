@@ -7,8 +7,8 @@
   --text-soft: #86868b;   /* secondary text — Apple gray */
   --bg:        #f6f5f2;   /* soft off-white (easy on the eyes) */
   --bg-alt:    #eceae5;   /* alternating section */
-  --accent:    #0071e3;   /* Apple blue — links, timeline, structure */
-  --accent-dk: #0058b8;   /* hover */
+  --accent:    #003976;   /* Yonsei Blue — links, timeline, structure */
+  --accent-dk: #002a56;   /* hover (darker) */
   --accent2:   #0d9488;   /* teal — status tags */
   --accent2-bg:#e2efec;   /* teal tint */
   --border:    #e3e1dc;   /* hairlines */
@@ -24,8 +24,8 @@
   --text-soft: #9b9ba2;
   --bg:        #1e1e20;   /* charcoal editor bg */
   --bg-alt:    #252529;   /* panel/sidebar shade */
-  --accent:    #4ea1ff;
-  --accent-dk: #2997ff;
+  --accent:    #6aa4de;   /* lightened Yonsei Blue for dark-mode contrast */
+  --accent-dk: #8bbceb;
   --accent2:   #2dd4bf;
   --accent2-bg:rgba(45, 212, 191, 0.16);
   --border:    #34343a;
@@ -51,7 +51,7 @@ html { scroll-behavior: smooth; }
   left: 0;
   right: 0;
   height: 75vh;
-  background: radial-gradient(72% 55% at 50% 0%, rgba(78, 161, 255, 0.10), rgba(45, 212, 191, 0.03) 48%, transparent 72%);
+  background: radial-gradient(72% 55% at 50% 0%, rgba(106, 164, 222, 0.10), rgba(45, 212, 191, 0.03) 48%, transparent 72%);
   pointer-events: none;
   z-index: 0;
 }
