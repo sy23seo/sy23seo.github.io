@@ -131,9 +131,8 @@ strong, b { font-weight: 600; }
 /* Floating "scroll for more" hint */
 .scroll-hint {
   position: fixed;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
+  right: 26px;
+  bottom: 20px;
   z-index: 5;
   color: var(--text-soft);
   font-size: 34px;
@@ -143,8 +142,8 @@ strong, b { font-weight: 600; }
 .scroll-hint:hover { color: var(--text); text-decoration: none; }
 .scroll-hint.hide { opacity: 0; pointer-events: none; }
 @keyframes bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(7px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(7px); }
 }
 @media (prefers-reduced-motion: reduce) { .scroll-hint { animation: none; } }
 .nav-name {
