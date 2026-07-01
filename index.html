@@ -8,7 +8,7 @@
   <meta name="author" content="Seung Yeon Seo">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
-  <link rel="stylesheet" href="css/style.css?v=42">
+  <link rel="stylesheet" href="css/style.css?v=43">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -36,7 +36,7 @@
         <a href="#publications">Publications</a>
         <a href="#talks">Conference</a>
       </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127770;</button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127773;</button>
     </div>
   </header>
 
@@ -237,27 +237,35 @@
   <script>
     function toggleTheme() {
       var root = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
       function apply() {
         root.classList.toggle('dark');
         try { localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
         syncThemeIcon();
       }
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!document.startViewTransition || reduce) { apply(); return; }
-      var btn = document.querySelector('.theme-toggle');
+      function pop() {
+        if (!btn) return;
+        btn.classList.remove('pop');
+        void btn.offsetWidth;   /* reflow so the animation restarts each click */
+        btn.classList.add('pop');
+      }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { apply(); return; }
+      if (!document.startViewTransition) { apply(); pop(); return; }
       var r = btn.getBoundingClientRect();
       var x = r.left + r.width / 2, y = r.top + r.height / 2;
       var end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-      document.startViewTransition(apply).ready.then(function () {
+      var vt = document.startViewTransition(apply);
+      vt.ready.then(function () {
         root.animate(
           { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + end + 'px at ' + x + 'px ' + y + 'px)'] },
           { duration: 520, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
         );
       });
+      vt.finished.then(pop);
     }
     function syncThemeIcon() {
       var b = document.querySelector('.theme-toggle');
-      if (b) b.textContent = document.documentElement.classList.contains('dark') ? '🌝' : '🌚';
+      if (b) b.textContent = document.documentElement.classList.contains('dark') ? '🌚' : '🌝';
     }
     syncThemeIcon();
 
