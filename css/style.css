@@ -128,7 +128,7 @@ strong, b { font-weight: 600; }
   transform: translateX(-50%);
   z-index: 5;
   color: var(--text-soft);
-  font-size: 26px;
+  font-size: 34px;
   animation: bob 1.8s ease-in-out infinite;
   transition: opacity .4s ease;
 }
@@ -247,6 +247,7 @@ strong, b { font-weight: 600; }
   text-wrap: balance;   /* even line lengths, Apple-style */
 }
 .about p b { font-weight: 600; }
+:root.dark .about p b { color: #ffffff; }   /* brighter so emphasis shows on dark */
 
 /* ===== Timeline (education / experience) — vertical rail + dots ===== */
 .timeline {
