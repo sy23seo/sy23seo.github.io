@@ -179,6 +179,20 @@ strong, b { font-weight: 600; }
 .hero-role { font-size: 23px; font-weight: 500; margin: 0 0 2px; letter-spacing: -0.01em; }
 .hero-affil { font-size: 19px; color: var(--text); margin: 0 0 6px; }
 .hero-lab { font-size: 15px; color: var(--text-soft); margin: 0 0 22px; }
+.hero-lab a {
+  color: inherit;             /* blends in; effect only on hover (like publications) */
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.hero-lab a::after {
+  content: "\2197";
+  margin-left: 2px;
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+.hero-lab a:hover { color: var(--accent); text-decoration: none; }
+.hero-lab a:hover::after { opacity: 1; color: var(--accent); }
 .hero-tagline {
   font-size: 18px;
   color: var(--text);
@@ -187,12 +201,14 @@ strong, b { font-weight: 600; }
   line-height: 1.55;
   text-wrap: balance;
 }
-.hero-links { display: flex; gap: 12px; justify-content: center; }
+.hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .hero-links a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 11px 22px;
+  width: 132px;              /* all three buttons identical width */
+  padding: 11px 0;
   border: 1px solid var(--border);
   border-radius: 980px;
   color: var(--text);
