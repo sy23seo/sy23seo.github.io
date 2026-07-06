@@ -219,6 +219,7 @@ strong, b { font-weight: 600; }
 .hero-links .fa-envelope { color: var(--accent); }
 .hero-links .fa-flask { color: var(--accent2); }
 .hero-links .fa-google-scholar { color: var(--accent); }
+.hero-links .fa-linkedin-in { color: var(--accent); }
 
 /* ===== Sections ===== */
 .section { padding: 100px 24px; }
